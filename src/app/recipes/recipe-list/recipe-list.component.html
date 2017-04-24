@@ -1,0 +1,18 @@
+
+
+<div class="row">   
+    <div class="col-xs-12"> 
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+
+<hr>    
+<div class="row">
+    <div class="col-xs-12">
+        From Recipe Item:  
+       <app-recipe-item *ngFor="let recipeElem of recipes" 
+            [recipe] = 'recipeElem'> </app-recipe-item>     
+    </div>
+</div>
+<!--  
+     src="{{recipe.imagePath}}" -->
