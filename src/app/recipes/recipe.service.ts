@@ -33,6 +33,7 @@ export class RecipeService {
       ])    
   ];
 
+// as private recipes, so can't access directly from outside so need to return method 'getRecipes()'
   getRecipes(){
     return this.recipes.slice(); // slice use to get the copy only , not directly recipes editing
   }

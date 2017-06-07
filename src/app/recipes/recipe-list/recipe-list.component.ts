@@ -9,9 +9,10 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+  // initially it is undefined & value will be available at 'ngOnInit'
+  recipes: Recipe[]; // recipes is a variable & Recipes[] i stype of the variable 
   
-  recipes: Recipe[];
-
+  // injecting service
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
