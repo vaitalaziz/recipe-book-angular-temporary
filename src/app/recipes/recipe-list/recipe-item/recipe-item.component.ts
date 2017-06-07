@@ -17,7 +17,7 @@ export class RecipeItemComponent implements OnInit {
   constructor(private recipeService: RecipeService){}
   
   onSelected(){
-    // EventEmitter dicleared at recipe service & emit here but output/subscribe of this at 
+    // EventEmitter dicleared at recipe service & emit here but output/subscribe of this at "recipes.component.ts"
     this.recipeService.recipeSelected.emit(this.recipe); 
   }
   ngOnInit() {
