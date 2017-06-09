@@ -19,8 +19,8 @@ export class ShoppingListService {
       this.ingredientsChanged.emit(this.ingredients.slice()); 
   }
   addIngredients(ingredients: Ingredient[]){
-     // spread operator(...) array of elements turn into list of elements  
-     // ... ingredients into list of single ingredient 
+     // ES6 feature spread operator(...) array of elements turn into list of elements  
+     // ... ingredients into list of single ingredients 
       this.ingredients.push(...ingredients);
      // all ingredients one go & then emit  
       this.ingredientsChanged.emit(this.ingredients.slice()); 
