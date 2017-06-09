@@ -19,6 +19,10 @@ export class ShoppingListService {
       this.ingredientsChanged.emit(this.ingredients.slice()); 
   }
   addIngredients(ingredients: Ingredient[]){
+    //   for (let ingredient of ingredients) {
+    //       this.addIngredient(ingredient);
+    //   }  this for loop can use but might lot of events so better bellow code 
+     
      // ES6 feature spread operator(...) array of elements turn into list of elements  
      // ... ingredients into list of single ingredients 
       this.ingredients.push(...ingredients);
