@@ -8,8 +8,8 @@
 
         <div class="collapse navbar-collapse"> <!-- navbar-default //  -->
             <ul class="nav navbar-nav">
-                <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
-                <li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+                <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+                <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">    
                 <li class="dropdown" appDropdown>
@@ -23,3 +23,12 @@
         </div>
     </div>
 </nav>
+
+<!-- 
+    <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
+    <li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+-->
+<!--
+    explanation:: 
+    routerLinkActive="active"  = to mark active link 
+-->
