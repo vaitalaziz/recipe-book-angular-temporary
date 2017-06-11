@@ -2,7 +2,8 @@
 
 
 <a style="cursor: pointer;"
-    class="list-group-item clearfix" (click)="onSelected()">
+    [routerLink] = "[index]"
+    class="list-group-item clearfix">
     <div class="pull-left">
         <h4 class="list-group-item-heading">Recipe Name:  {{recipe.name}} </h4>
         <p class="list-group-item-text">Description:  {{recipe.description}}</p>
@@ -15,4 +16,8 @@
 </a>
 
 <hr>  
-<!-- [src]="recipe.imagePath"  -->
+<!-- [src]="recipe.imagePath"  
+    
+    // routerLink :  
+        binded it because dynamically wanna pass array by segment by segment
+-->
