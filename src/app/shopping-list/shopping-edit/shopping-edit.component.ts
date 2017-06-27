@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import { Ingredient } from '../../shared/ingredient.model'; 
 import { ShoppingListService } from '../shopping-list.service'; 
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -9,8 +10,9 @@ import { ShoppingListService } from '../shopping-list.service';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('amountInput') amountInputRef: ElementRef;
+  // no need becauase we odn't use local ref so
+  // @ViewChild('nameInput') nameInputRef: ElementRef;
+  // @ViewChild('amountInput') amountInputRef: ElementRef;
   
 
   constructor(private slistService: ShoppingListService) { }
@@ -18,10 +20,13 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddItem(){ // const used bcz no planning to change so, otherwise 'let' use
-    const ingName = this.nameInputRef.nativeElement.value;
-    const ingAmount = this.amountInputRef.nativeElement.value;
-    const newIngredient = new Ingredient(ingName, ingAmount);
+  onAddItem(form: NgForm){ // const used bcz no planning to change so, otherwise 'let' use
+  // no need becauase we odn't use local ref so
+    // const ingName = this.nameInputRef.nativeElement.value;
+    // const ingAmount = this.amountInputRef.nativeElement.value;
+    // const newIngredient = new Ingredient(ingName, ingAmount);
+    const value = form.value;
+    const newIngredient = new Ingredient(value.name, value.amount);
     //
     this.slistService.addIngredient(newIngredient); 
      
