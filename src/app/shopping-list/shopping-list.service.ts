@@ -4,8 +4,8 @@ import { Subject } from 'rxjs/Subject';
 
 export class ShoppingListService {
    //ingredientsChanged = new EventEmitter<Ingredient[]>();
-   
     ingredientsChanged = new Subject<Ingredient[]>();
+    startedEditing = new Subject<number>(); 
    
    private ingredients: Ingredient[] = [
     new Ingredient('Apple',  3),
@@ -18,6 +18,8 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient){
       this.ingredients.push(ingredient);
+    //this.ingredientsChanged.emit(this.ingredients.slice());
+    
 // very important **  need emit to have always get the update ingredients array after adding/deleting....
       this.ingredientsChanged.next(this.ingredients.slice()); 
   }
