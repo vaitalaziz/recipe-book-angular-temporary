@@ -23,6 +23,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
           });
   }
 
+onEditItem(index: number){
+  this.slistService.startedEditing.next(index); // passing to shopping-edit component
+}
+
+// must need to unsubscribe to prevent memory waste because using own Subject 
 ngOnDestroy(){
   this.subscription.unsubscribe();
 }
