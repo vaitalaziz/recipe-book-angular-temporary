@@ -7,7 +7,7 @@ import { Directive, HostListener, HostBinding } from '@angular/core';
 })
 export class DropdownDirective {
   
-  @HostBinding('class.open') isOpen = false; // binding css class open
+  @HostBinding('class.open') isOpen = false; // binding or detached css class 'open'
   @HostListener('click') onOff(){
       this.isOpen = !this.isOpen; 
   }
