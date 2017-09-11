@@ -12,7 +12,7 @@ import { ShoppingListService } from '../shopping-list.service';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
-  // no need becauase we odn't use local ref so
+  // no need becauase we don't use local ref so
   // @ViewChild('nameInput') nameInputRef: ElementRef;
   // @ViewChild('amountInput') amountInputRef: ElementRef;
   
