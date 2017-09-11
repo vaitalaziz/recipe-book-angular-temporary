@@ -1,12 +1,13 @@
 
 
-
-<app-header (featureSelected)="onNavigate($event)">  </app-header>
+<!-- headerComponent passing EventEmitter value by featureSelected to AppComponent -->
+<app-header >  </app-header>
 <div class="container">   
   <div class="row"> 
     <div class="col-md-12"> 
-      <!--<app-recipes *ngIf="loadedFeature === 'recipe'" >  </app-recipes>
-      <app-shopping-list *ngIf = "loadedFeature !=='recipe'" >  </app-shopping-list> -->
+      <!-- commented all because, using route to display them-->
+        <!--<app-recipes *ngIf="loadedFeature === 'recipe'" >  </app-recipes>
+        <app-shopping-list *ngIf = "loadedFeature !=='recipe'" >  </app-shopping-list> -->
       <router-outlet> </router-outlet>
     </div>
   </div>
