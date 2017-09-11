@@ -11,8 +11,9 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
   // initially it is undefined & value will be available at 'ngOnInit'
-  recipes: Recipe[]; // recipes is a variable & Recipes[] is type of the variable 
+  recipes: Recipe[]; // recipes is a variable & Recipe[] is type of the variable 
   
+  // 'Router' need to navigate
   // injecting service
   constructor(private recipeService: RecipeService, 
               private router: Router,
