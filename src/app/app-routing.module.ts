@@ -8,7 +8,7 @@ import { RecipeStartComponent} from './recipes/recipe-start/recipe-start.compone
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component'; 
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component'; 
 
-
+// all routes 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full'},
     { path: 'recipes', component: RecipesComponent, children: [
@@ -20,6 +20,7 @@ const appRoutes: Routes = [
     { path: 'shopping-list', component: ShoppingListComponent},
 ]; 
 
+// need to do it
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
