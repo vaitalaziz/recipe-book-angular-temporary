@@ -23,6 +23,7 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit() {
     // const id = this.route.snapshot.params['id'];
+    // better way to follow below code because of dynamically can select recipe
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
@@ -37,7 +38,8 @@ export class RecipeDetailComponent implements OnInit {
   }
   onEditRecipe(){
     // for complex route path way:  
-      // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route}); 
+      // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+    // or samae thing but easy way:  
      this.router.navigate(['edit'], {relativeTo: this.route}); 
   }
 }
