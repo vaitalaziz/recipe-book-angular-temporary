@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false; 
-
+// need to retrieve id so need 'ActivatedRoute'  
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
