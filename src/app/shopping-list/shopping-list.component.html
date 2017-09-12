@@ -5,7 +5,8 @@
     <hr>    
     
     <ul class="list-group">  
-      <!-- to act as button so..-->
+      <!-- to act as button so use <a> tag, 
+        shopping-list- ingredients item to be clickable use  (click)="onEditItem(i)" -->
       <a class="list-group-item" style="cursor: pointer"
         *ngFor="let ingredient of ingredients; let i = index"
         (click)="onEditItem(i)"  
@@ -16,3 +17,4 @@
     </ul>
   </div>
 </div>
+
