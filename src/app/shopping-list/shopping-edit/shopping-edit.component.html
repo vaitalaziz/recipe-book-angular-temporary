@@ -4,7 +4,7 @@
     <div class="col-xs-12">
         shopping-edit works!
         <!-- action="" no need bcz not sending requesting to the server -->
-        <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+        <form (ngSubmit)="onUpdateOrAddItem(f)" #f="ngForm">
             <div class="row">
                 <div class="col-sm-5 form-group">
                     <label for="name">Name</label>
@@ -28,7 +28,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit" [disabled]= "! f.valid">Add</button>
+                    <button class="btn btn-success" 
+                    type="submit" 
+                    [disabled]= "! f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
                     <button class="btn btn-danger" type="button">Delete</button>
                     <button class="btn btn-primary" type="button">Clear</button>
                 </div>
@@ -36,3 +38,6 @@
         </form>
     </div>
 </div>
+
+<!--  (OR) 
+    pattern="^[1-9]+[0-9]*$" -->
