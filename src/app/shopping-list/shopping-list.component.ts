@@ -24,7 +24,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
 onEditItem(index: number){
-  this.slistService.startedEditing.next(index); // passing to shopping-edit component
+  // adding into 'Subject', at shopping-list.service, then we can listen that from anywhere as need
+      // then it will listent into 'shopping-edit'
+  this.slistService.startedEditing.next(index); 
 }
 
 // must need to unsubscribe to prevent memory waste because using own Subject 
