@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Subject';
 export class ShoppingListService {
    //ingredientsChanged = new EventEmitter<Ingredient[]>();
     ingredientsChanged = new Subject<Ingredient[]>();
-    startedEditing = new Subject<number>(); 
+    startedEditing = new Subject<number>(); // it can listen from anywhere, we listen into 'shopping-edit'
    
    private ingredients: Ingredient[] = [
     new Ingredient('Apple',  3),
@@ -14,6 +14,11 @@ export class ShoppingListService {
 
   getIngredients(){
       return this.ingredients.slice(); 
+  }
+
+  // return the selected ingredient from ingredients[theSelectedIndex]
+  getIngredient(index: number){
+      return this.ingredients[index]; 
   }
 
   addIngredient(ingredient: Ingredient){
@@ -32,6 +37,11 @@ export class ShoppingListService {
      // ... ingredients into list of single ingredients 
       this.ingredients.push(...ingredients);
      // all ingredients one go & then emit  
+      this.ingredientsChanged.next(this.ingredients.slice()); 
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient){
+      this.ingredients[index] = newIngredient;
       this.ingredientsChanged.next(this.ingredients.slice()); 
   }
 }
