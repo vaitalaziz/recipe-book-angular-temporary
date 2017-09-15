@@ -1,0 +1,12 @@
+
+
+/* it will marked the whole form as well */
+    /*.ng-invalid {
+        border: 1px solid red; 
+    }*/
+
+/* specific element to be marked, also for touched  */
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red; 
+}
