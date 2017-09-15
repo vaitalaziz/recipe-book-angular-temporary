@@ -33,6 +33,19 @@ export class RecipeEditComponent implements OnInit {
     console.log(this.recipeForm);
   }
 
+  onAddIngredient(){
+    //this.recipeForm.get('ingredients') // this angular can't realize that 'FormArray' so need to cast 
+    // cast sign <> // cast into 'FormArray' use <FormArray>
+    // push new 'FormGroup', so for that need new control name as well  
+    (<FormArray>this.recipeForm.get('ingredients')).push(
+      new FormGroup({
+        'name': new FormControl(),
+        'amount': new FormControl()
+      })
+    );
+
+  }
+
   // Reactive approach
   private initForm(){
     let recipeName = '';
