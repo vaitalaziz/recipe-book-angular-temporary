@@ -33,13 +33,15 @@
             type="text"
             id="imagePath"
             formControlName="imagePath"
-            class="form-control">
+            class="form-control"
+            #impagePath>
           </div>
         </div>
       </div>
+      <!-- 'imagePath' value binding as 'src'property of the image, so can see as image preview-->
       <div class="row">
         <div class="col-xs-12">
-          <img src="" alt="" class="img-responsive">
+          <img [src]="impagePath.value" alt="" class="img-responsive">
         </div>
       </div>
       <div class="row">
