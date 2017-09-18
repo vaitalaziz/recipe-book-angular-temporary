@@ -60,6 +60,12 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice()); // *** important
   }
 
+// set recipes by fetching recipes from firebase 
+  setRecipes(recipes: Recipe[]){
+    this.recipes = recipes; // updating existing recipe by fetching from firebase
+    this.recipesChanged.next(this.recipes.slice()); // then final update of the recipe array 
+  }
+
   // delete recipe
   deleteRecipe(index: number){
     this.recipes.splice(index, 1);
