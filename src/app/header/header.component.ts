@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DataStroageService } from '../shared/data-storage.service'
 import { Response } from '@angular/http';
+import { AuthService } from '../auth/auth.service'
 
 @Component({
     selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent{
     //     this.featureSelected.emit(feature);
     // }
 
-   constructor(private dataStorageService: DataStroageService){}
+   constructor(private dataStorageService: DataStroageService,
+                private authService: AuthService){}
       
    onSaveData(){
        this.dataStorageService.storageRecipes()
@@ -28,6 +30,9 @@ export class HeaderComponent{
 
    onFetchData(){
        this.dataStorageService.getRecipes();
+   }
+   onLogout(){
+       this.authService.logout();
    }
 }
 
